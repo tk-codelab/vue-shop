@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>That Green Notebook</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuggles&family=Lora:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <a href="#product-and-cart" class="skipLink" ref="skipLink">Skip to main content</a>
+        <div class="nav-bar" role="navigation">
+            <div class="logo">That Green Notebook</div>
+        </div>
+        <section id="product-and-cart" class="product-and-cart" role="main">
+            <product-display :premium="premium" @add-to-cart="updateCart">
+            </product-display>
+            <div id="show-modal" @click="showModal = true" class="button cart">Cart({{ cart.length }})</div>
+        </section>
+        <!-- use the modal component, pass in the prop -->
+        <modal :cart="cart" v-if="showModal" @close="showModal = false">
+        </modal>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Import Components -->
+    <script src="./components/ProductDisplay.js"></script>
+    <script src="./components/ReviewForm.js"></script>
+    <script src="./components/ReviewList.js"></script>
+    <script src="./components/Modal.js"></script>
+    <!-- Mount App -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+
+</html>
