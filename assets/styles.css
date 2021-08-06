@@ -200,14 +200,6 @@ section {
   grid-row-gap: 40px;
 }
 
-.product-image {
-  /* width: 30%; */
-}
-
-.product-info {
-  /* width: 70%; */
-}
-
 .details {
   padding-left: 0;
 }
@@ -314,15 +306,6 @@ ul {
     font-size: 16px;
 }
 
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
-
 .modal-enter {
   opacity: 0;
 }
@@ -361,17 +344,4 @@ ul {
 #modal-template .product-details {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-
-@media only screen and (max-width: 600px) {
-  .container {
-  }
-
-  .product-image,
-  .product-info {
-  }
-
-  .review-form {
-  }
 }
